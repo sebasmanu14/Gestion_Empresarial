@@ -13,6 +13,10 @@ import { StudentService } from './services/student/student.service';
 import { StudentController } from './controllers/student/student.controller';
 import { CompanyService } from './services/company/company.service';
 import { CompanyController } from './controllers/company/company.controller';
+import { LevelController } from './controllers/level/level.controller';
+import { LevelService } from './services/level/level.service';
+import { InstitutionalTutorController } from './controllers/institutional-tutor/institutional_tutor.controller';
+import { InstitutionalTutorService } from './services/institutional-tutor/institutional-tutor.service';
 @Module({
   imports: [],
   controllers: [
@@ -22,7 +26,9 @@ import { CompanyController } from './controllers/company/company.controller';
     SchoolPeriodController,
     DualTrainingController,
     StudentController,
-    CompanyController
+    CompanyController,
+    LevelController,
+    InstitutionalTutorController,
   ],
   providers: [
     AppService,
@@ -30,7 +36,9 @@ import { CompanyController } from './controllers/company/company.controller';
     SchoolPeriodService,
     DualTrainingService,
     StudentService,
-    CompanyService
+    CompanyService,
+    LevelService,
+    InstitutionalTutorService,
   ],
 })
 export class AppModule {}
