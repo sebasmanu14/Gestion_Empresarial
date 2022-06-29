@@ -12,7 +12,7 @@ export class StudentService {
   private students: Student[] = [
     {
       id: 1,
-      name: '2022',
+      name: 'Marlon',
       address: 'Jose Argudo',
       phone: 2731487,
     },

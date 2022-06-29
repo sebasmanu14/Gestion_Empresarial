@@ -17,6 +17,8 @@ import { LevelController } from './controllers/level/level.controller';
 import { LevelService } from './services/level/level.service';
 import { InstitutionalTutorController } from './controllers/institutional-tutor/institutional_tutor.controller';
 import { InstitutionalTutorService } from './services/institutional-tutor/institutional-tutor.service';
+import { CareerService } from './services/career/career.service';
+import { CareerController } from './controllers/career/career.controller';
 @Module({
   imports: [],
   controllers: [
@@ -29,6 +31,7 @@ import { InstitutionalTutorService } from './services/institutional-tutor/instit
     CompanyController,
     LevelController,
     InstitutionalTutorController,
+    CareerController,
   ],
   providers: [
     AppService,
@@ -39,6 +42,7 @@ import { InstitutionalTutorService } from './services/institutional-tutor/instit
     CompanyService,
     LevelService,
     InstitutionalTutorService,
+    CareerService,
   ],
 })
 export class AppModule {}
