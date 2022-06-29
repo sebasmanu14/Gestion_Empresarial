@@ -1,9 +1,7 @@
+/* eslint-disable prettier/prettier */
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Student } from 'src/entities/student.entity';
-import {
-  CreateStudentdDto,
-  UpdateStudentDto,
-} from 'src/dtos/student.dtos';
+import { CreateStudentdDto, UpdateStudentDto } from 'src/dtos/student.dtos';
 
 @Injectable()
 export class StudentService {

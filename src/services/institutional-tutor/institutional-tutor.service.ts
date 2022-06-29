@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InstitutionalTutor } from 'src/entities/institutionalTutor.entity';
 import { CreateInstitutionalTutorDto, UpdateInstitutionalTutorDto }
@@ -14,19 +15,19 @@ export class InstitutionalTutorService {
         address:'Guamani',
       },
     ];
-  
+
     /** Buscar todo */
     findAll() {
       return this.institutionalTutors;
     }
-  
+
     /**Buscar por id */
-  
+
     findOne(id: number) {
       return this.institutionalTutors.find((item) => item.id);
     }
     /**Create */
-  
+
     create(payload: CreateInstitutionalTutorDto) {
       this.countIdInstitutionalTutor = this.countIdInstitutionalTutor + 1;
       const newInstitutionalTutor = {
@@ -36,9 +37,9 @@ export class InstitutionalTutorService {
       this.institutionalTutors.push(newInstitutionalTutor);
       return newInstitutionalTutor;
     }
-  
+
     /**UPDATE */
-  
+
     update(id: number, payload: UpdateInstitutionalTutorDto) {
       /**
            * const user = await getRepository(Users).findOne(req.params.id); //Busco el usuario en la tabla por el ID recibido
@@ -58,7 +59,7 @@ export class InstitutionalTutorService {
       return null;
     }
     /**DELETE  */
-  
+
     delete(id: number) {
       const indexInstitutionalTutor = this.institutionalTutors.findIndex(
         (item) => item.id === id,
@@ -66,7 +67,7 @@ export class InstitutionalTutorService {
       if (indexInstitutionalTutor === -1) {
         throw new NotFoundException(`Tutor institucional ${id} no encontrado`);
       }
-  
+
       this.institutionalTutors.splice(indexInstitutionalTutor, 1);
       return true;
     }

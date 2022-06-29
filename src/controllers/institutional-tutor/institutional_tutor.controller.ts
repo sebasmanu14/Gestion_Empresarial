@@ -1,4 +1,5 @@
-import { 
+/* eslint-disable prettier/prettier */
+import {
     Controller,
     Param,
     Query,
@@ -13,7 +14,7 @@ import {
   import { ParseIntPipe } from 'src/common/parse-int.pipe';
   import { CreateInstitutionalTutorDto, UpdateInstitutionalTutorDto } from 'src/dtos/institutional-tutor.dtos';
   import { InstitutionalTutorService } from 'src/services/institutional-tutor/institutional-tutor.service';
-  
+
 @Controller('institutionalTutors')
 export class InstitutionalTutorController {
     constructor(private institutionalTutorService: InstitutionalTutorService) {}

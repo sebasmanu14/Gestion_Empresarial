@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   Controller,
   Param,
@@ -25,9 +26,7 @@ export class StudentController {
   }
 
   @Get(':studentId') //@Get('getStudentgetStudent/:studentId')
-  getStudent(
-    @Param(`studentId`, ParseIntPipe) studentId: number,
-  ) {
+  getStudent(@Param(`studentId`, ParseIntPipe) studentId: number) {
     // return `product ${studentId}`;
     return this.studentService.findOne(studentId);
   }

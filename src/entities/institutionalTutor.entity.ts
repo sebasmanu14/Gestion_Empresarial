@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Column, Entity, PrimaryColumn } from 'typeorm';
 @Entity()
 export class InstitutionalTutor {
@@ -7,6 +8,6 @@ export class InstitutionalTutor {
   name: string;
   @Column()
   address: string;
-  
+
 
 }
