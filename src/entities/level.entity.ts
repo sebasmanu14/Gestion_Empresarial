@@ -1,9 +1,8 @@
-/* eslint-disable prettier/prettier */
 import { Column, Entity, PrimaryColumn } from 'typeorm';
 @Entity()
-export class SchoolPeriod {
+export class Level {
   @PrimaryColumn()
   id: number;
   @Column()
-  year: string;
+  semester_level: number;
 }

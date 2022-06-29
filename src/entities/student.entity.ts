@@ -1,9 +1,12 @@
-/* eslint-disable prettier/prettier */
 import { Column, Entity, PrimaryColumn } from 'typeorm';
 @Entity()
-export class SchoolPeriod {
+export class Student {
   @PrimaryColumn()
   id: number;
   @Column()
-  year: string;
+  name: string;
+  @Column()
+  phone: number;
+  @Column()
+  address: string;
 }
