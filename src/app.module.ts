@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -8,6 +9,8 @@ import { SchoolPeriodService } from './services/school-period/school-period.serv
 import { SchoolPeriodController } from './controllers/school-period/school-period.controller';
 import { DualTrainingService } from './services/dual-training/dual-training.service';
 import { DualTrainingController } from './controllers/dual-training/dual-training.controller';
+import { StudentService } from './services/student/student.service';
+import { StudentController } from './controllers/student/student.controller';
 
 @Module({
   imports: [],
@@ -17,12 +20,14 @@ import { DualTrainingController } from './controllers/dual-training/dual-trainin
     ProductsController,
     SchoolPeriodController,
     DualTrainingController,
+    StudentController
   ],
   providers: [
     AppService,
     ProductsService,
     SchoolPeriodService,
     DualTrainingService,
+    StudentService
   ],
 })
 export class AppModule {}
