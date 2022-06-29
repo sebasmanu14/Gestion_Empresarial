@@ -7,6 +7,4 @@ export class BusinessTutor {
   tutorName: string;
   @Column()
   addressTutor: string;
-  @Column()
-  companyFk: number;
 }

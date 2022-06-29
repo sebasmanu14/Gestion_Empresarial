@@ -1,9 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { BusinessTutor } from 'src/entities/businessTutor.entity';
-import { CreateBusinessTutorDto, UpdateBusinessTutorDto } from 'src/dtos/business-tutor.dtos';
+import { CreateBusinessTutorDto, UpdateBusinessTutorDto } from 'src/dtos/business-tutors.dtos';
 
 @Injectable()
-export class BusinessTutorService {
+export class BusinessTutorsService {
     private countIdBusinessTutor = 1;
 
     private businessTutors: BusinessTutor[] = [
@@ -11,7 +11,6 @@ export class BusinessTutorService {
             id: 1,
             tutorName: 'Maritza',
             addressTutor: 'La Ecuatoriana',
-            companyFk: 1,
         },
     ];
     /** Buscar todo */
@@ -28,12 +27,12 @@ export class BusinessTutorService {
 
     create(payload: CreateBusinessTutorDto) {
         this.countIdBusinessTutor = this.countIdBusinessTutor + 1;
-        const newProduct = {
+        const newBusinessTutor = {
             id: this.countIdBusinessTutor,
             ...payload,
         };
-        this.businessTutors.push(newProduct);
-        return newProduct;
+        this.businessTutors.push(newBusinessTutor);
+        return newBusinessTutor;
     }
 
     /**UPDATE */

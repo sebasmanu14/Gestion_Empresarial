@@ -6,8 +6,6 @@ export class CreateBusinessTutorDto{
     readonly tutorName: string;
     @IsString()
     readonly addressTutor:string;
-    @IsNumber()
-    readonly companyFk: number;
 }
 
 export class UpdateBusinessTutorDto extends PartialType(CreateBusinessTutorDto){}

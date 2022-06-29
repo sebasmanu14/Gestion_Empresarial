@@ -8,8 +8,8 @@ import { ProductsService } from './services/products/products.service';
 import { SchoolPeriodService } from './services/school-period/school-period.service';
 import { SchoolPeriodController } from './controllers/school-period/school-period.controller';
 <<<<<<< HEAD
-import { BusinessTutorService } from './services/business-tutor/business-tutor.service';
-import { BusinessTutorController } from './controllers/business-tutor/business-tutor.controller';
+import { BusinessTutorService } from './services/business-tutors/business-tutors.service';
+import { BusinessTutorController } from './controllers/business-tutor/business-tutors.controller';
 
 =======
 import { DualTrainingService } from './services/dual-training/dual-training.service';

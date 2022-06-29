@@ -11,22 +11,24 @@ import {
     HttpCode,
    } from '@nestjs/common';
 import { ParseIntPipe } from 'src/common/parse-int.pipe';
-import { BusinessTutorService } from 'src/services/business-tutor/business-tutor.service';
-import { CreateBusinessTutorDto } from 'src/dtos/business-tutor.dtos';
-import { UpdateBusinessTutorDto } from 'src/dtos/business-tutor.dtos';
+import { BusinessTutorsService } from 'src/services/business-tutors/business-tutors.service';
+import { CreateBusinessTutorDto } from 'src/dtos/business-tutors.dtos';
+import { UpdateBusinessTutorDto } from 'src/dtos/business-tutors.dtos';
 
 
-@Controller('business-tutor')
-export class BusinessTutorController {
-    constructor(private businessTutorService: BusinessTutorService) {}
+@Controller('business-tutors')
+export class BusinessTutorsController {
+    constructor(private businessTutorsService: BusinessTutorsService) {}
+  /**RUTAS  NO DINAMICAS */
 
     @Get('filter') 
     getBusinessTutorFilter() {
       return `Hola mundo `;
     }
+      /**RUTAS   DINAMICAS */
     @Get(':businessTutorId') 
     getBusinessTutor(@Param(`businessTutorId`, ParseIntPipe) businessTutorId: number) {
-      return this.businessTutorService.findOne(businessTutorId);
+      return this.businessTutorsService.findOne(businessTutorId);
     }
 
     @Get('') 
@@ -36,7 +38,7 @@ export class BusinessTutorController {
       @Query(`brand`) brand: string,
     ) {
   
-      return this.businessTutorService.findAll();
+      return this.businessTutorsService.findAll();
     }
 
       //crear*******************
@@ -46,7 +48,7 @@ export class BusinessTutorController {
     //     message:'accion de crear',
     //     payload,
     // }
-    return this.businessTutorService.create(payload);
+    return this.businessTutorsService.create(payload);
   }
   @Put(':id')
   update(@Param('id') id: number, @Body() payload: UpdateBusinessTutorDto) {
@@ -54,13 +56,13 @@ export class BusinessTutorController {
     //     id,
     //     payload,
     // }
-    return this.businessTutorService.update(id, payload);
+    return this.businessTutorsService.update(id, payload);
   }
   /***DELETE */
   @Delete(':id')
   delete(@Param('id') id: number) {
     // return id;
-    return this.businessTutorService.delete(+id);
+    return this.businessTutorsService.delete(+id);
   }
 
 
