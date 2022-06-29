@@ -3,7 +3,7 @@ import { SchoolPeriod } from 'src/entities/schoolPeriod.entity';
 import {
   CreateSchoolPeriodDto,
   UpdateSchoolPeriodDto,
-} from 'src/dtos/school-period.dtos';
+} from 'src/dtos/school-periods.dtos';
 
 @Injectable()
 export class SchoolPeriodService {
