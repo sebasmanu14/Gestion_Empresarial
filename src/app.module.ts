@@ -8,8 +8,8 @@ import { ProductsService } from './services/products/products.service';
 import { SchoolPeriodService } from './services/school-period/school-period.service';
 import { SchoolPeriodController } from './controllers/school-period/school-period.controller';
 <<<<<<< HEAD
-import { BusinessTutorService } from './services/business-tutors/business-tutors.service';
-import { BusinessTutorController } from './controllers/business-tutor/business-tutors.controller';
+import { BusinessTutorsService } from './services/business-tutors/business-tutors.service';
+import { BusinessTutorsController } from './controllers/business-tutor/business-tutors.controller';
 
 =======
 import { DualTrainingService } from './services/dual-training/dual-training.service';
@@ -31,9 +31,9 @@ import { InstitutionalTutorService } from './services/institutional-tutor/instit
     ProductsController,
     SchoolPeriodController,
 <<<<<<< HEAD
-    BusinessTutorController,
+    BusinessTutorsController,
   ],
-  providers: [AppService, ProductsService, SchoolPeriodService, BusinessTutorService],
+  providers: [AppService, ProductsService, SchoolPeriodService, BusinessTutorsService],
 =======
     DualTrainingController,
     StudentController,
