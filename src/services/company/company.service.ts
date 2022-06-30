@@ -16,6 +16,7 @@ export class CompanyService {
       phone: '0969651205',
       company_address:'Nicolas Cevallos oe563',
       company_description: 'Gestion estudiantil',
+      ruc:'173568903903'
     },
   ];
 
