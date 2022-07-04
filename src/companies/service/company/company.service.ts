@@ -28,7 +28,7 @@ export class CompanyService {
   /**Buscar por id */
 
   findOne(id: number) {
-    return this.Companys.find((item) => item.id);
+    return this.Companys.find((item) => item.id == id);
   }
   /**Create */
 
@@ -53,7 +53,7 @@ export class CompanyService {
     //const product = await getRepository(Users).findOne(req.params.id);
     const Company = this.findOne(id);
     if (Company) {
-      const index = this.Companys.findIndex((item) => item.id === id);
+      const index = this.Companys.findIndex((item) => item.id == id);
       this.Companys[index] = {
         ...Company,
         ...payload,

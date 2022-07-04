@@ -22,7 +22,7 @@ export class CareerService {
   /**Buscar por id */
 
   findOne(id: number) {
-    return this.careers.find((item) => item.id);
+    return this.careers.find((item) => item.id == id);
   }
   /**Create */
 
@@ -47,7 +47,7 @@ export class CareerService {
     //const product = await getRepository(Users).findOne(req.params.id);
     const career = this.findOne(id);
     if (career) {
-      const index = this.careers.findIndex((item) => item.id === id);
+      const index = this.careers.findIndex((item) => item.id == id);
       this.careers[index] = {
         ...career,
         ...payload,

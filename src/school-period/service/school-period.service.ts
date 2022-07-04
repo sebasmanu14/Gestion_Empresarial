@@ -24,7 +24,7 @@ export class SchoolPeriodService {
   /**Buscar por id */
 
   findOne(id: number) {
-    return this.schoolPeriods.find((item) => item.id);
+    return this.schoolPeriods.find((item) => item.id == id);
   }
   /**Create */
 
@@ -49,7 +49,7 @@ export class SchoolPeriodService {
     //const product = await getRepository(Users).findOne(req.params.id);
     const schoolPeriod = this.findOne(id);
     if (schoolPeriod) {
-      const index = this.schoolPeriods.findIndex((item) => item.id === id);
+      const index = this.schoolPeriods.findIndex((item) => item.id == id);
       this.schoolPeriods[index] = {
         ...schoolPeriod,
         ...payload,

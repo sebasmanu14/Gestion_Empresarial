@@ -25,7 +25,7 @@ export class DualTrainingService {
 
   /**Buscar por id */
   findOne(id: number) {
-    return this.dualTrainings.find((item) => item.id);
+    return this.dualTrainings.find((item) => item.id == id);
   }
 
   /**Create */
@@ -49,7 +49,7 @@ export class DualTrainingService {
     //const product = await getRepository(Users).findOne(req.params.id);
     const dualTraining = this.findOne(id);
     if (dualTraining) {
-      const index = this.dualTrainings.findIndex((item) => item.id === id);
+      const index = this.dualTrainings.findIndex((item) => item.id == id);
       this.dualTrainings[index] = {
         ...dualTraining,
         ...payload,

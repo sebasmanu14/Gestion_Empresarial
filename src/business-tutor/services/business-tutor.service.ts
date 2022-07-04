@@ -27,7 +27,7 @@ export class BusinessTutorService {
     /**Buscar por id */
 
     findOne(id: number) {
-        return this.businessTutors.find((item) => item.id);
+        return this.businessTutors.find((item) => item.id == id);
     }
     /**Create */
 
@@ -52,7 +52,7 @@ export class BusinessTutorService {
         //const product = await getRepository(Users).findOne(req.params.id);
         const businessTutor = this.findOne(id);
         if (businessTutor) {
-            const index = this.businessTutors.findIndex((item) => item.id === id);
+            const index = this.businessTutors.findIndex((item) => item.id == id);
             this.businessTutors[index] = {
                 ...businessTutor,
                 ...payload,

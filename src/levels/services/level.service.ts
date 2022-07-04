@@ -22,7 +22,7 @@ export class LevelService {
   /**Buscar por id */
 
   findOne(id: number) {
-    return this.levels.find((item) => item.id);
+    return this.levels.find((item) => item.id == id);
   }
   /**Create */
 
@@ -47,7 +47,7 @@ export class LevelService {
     //const product = await getRepository(Users).findOne(req.params.id);
     const level = this.findOne(id);
     if (level) {
-      const index = this.levels.findIndex((item) => item.id === id);
+      const index = this.levels.findIndex((item) => item.id == id);
       this.levels[index] = {
         ...level,
         ...payload,
