@@ -35,7 +35,7 @@ import { BusinessTutorModule } from './business-tutor/business-tutor.module';
     CompanyController,
     InstitutionalTutorController,
     LevelController,
-    CareerController
+    CareerController,
   ],
   providers: [
     AppService,
@@ -47,7 +47,7 @@ import { BusinessTutorModule } from './business-tutor/business-tutor.module';
     LevelService,
     CompanyService,
     InstitutionalTutorService,
-    CareerService
+    CareerService,
   ],
 })
 export class AppModule {}
