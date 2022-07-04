@@ -12,9 +12,9 @@ import {
   HttpCode,
 } from '@nestjs/common';
 import { ParseIntPipe } from 'src/common/parse-int.pipe';
-import { CreateStudentdDto } from 'src/dtos/student.dtos';
-import { UpdateStudentDto } from 'src/dtos/student.dtos';
-import { StudentService } from 'src/services/student/student.service';
+import { CreateStudentdDto } from 'src/students/dtos/student.dtos';
+import { UpdateStudentDto } from 'src/students/dtos/student.dtos';
+import { StudentService } from 'src/students/service/student.service';
 
 @Controller('student')
 export class StudentController {

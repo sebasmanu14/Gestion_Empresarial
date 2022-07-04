@@ -11,18 +11,29 @@ import { BusinessTutorsService } from './services/business-tutors/business-tutor
 import { BusinessTutorsController } from './controllers/business-tutor/business-tutors.controller';
 import { DualTrainingService } from './services/dual-training/dual-training.service';
 import { DualTrainingController } from './controllers/dual-training/dual-training.controller';
-import { StudentService } from './services/student/student.service';
-import { StudentController } from './controllers/student/student.controller';
-import { CompanyService } from './services/company/company.service';
-import { CompanyController } from './controllers/company/company.controller';
+import { StudentService } from './students/service/student.service';
+import { StudentController } from './students/student_controller/student.controller';
+
 import { LevelController } from './controllers/level/level.controller';
 import { LevelService } from './services/level/level.service';
 import { InstitutionalTutorController } from './controllers/institutional-tutor/institutional_tutor.controller';
 import { InstitutionalTutorService } from './services/institutional-tutor/institutional-tutor.service';
-import { CareerService } from './services/career/career.service';
-import { CareerController } from './controllers/career/career.controller';
+import { CareerService } from './carrers_module/service/career/career.service';
+import { CareerController } from './carrers_module/career_controller/career.controller';
+import { StudentsModule } from './students/students.module';
+import { CompanyService } from './companies/service/company/company.service';
+import { CompanyController } from './companies/company_controller/company.controller';
+import { CarrersModuleModule } from './carrers_module/carrers_module.module';
+
+import { CompaniesModule } from './companies/companies.module';
 @Module({
-  imports: [],
+  imports: [
+    StudentsModule,
+    CarrersModuleModule,
+    CarrersModuleModule,
+    CompaniesModule,
+    CompaniesModule,
+  ],
   controllers: [
     AppController,
     CategoriesController,
@@ -34,7 +45,7 @@ import { CareerController } from './controllers/career/career.controller';
     CompanyController,
     InstitutionalTutorController,
     LevelController,
-    CareerController
+    CareerController,
   ],
   providers: [
     AppService,
@@ -46,7 +57,7 @@ import { CareerController } from './controllers/career/career.controller';
     LevelService,
     CompanyService,
     InstitutionalTutorService,
-    CareerService
+    CareerService,
   ],
 })
 export class AppModule {}

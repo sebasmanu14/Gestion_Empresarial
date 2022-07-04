@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Career } from 'src/entities/career.entity';
-import { CreateCareerdDto, UpdateCareerDto } from 'src/dtos/career.dtos';
+import { Career } from 'src/carrers_module/entity/career.entity';
+import { CreateCareerdDto, UpdateCareerDto } from 'src/carrers_module/dtos/career.dtos';
 
 @Injectable()
 export class CareerService {

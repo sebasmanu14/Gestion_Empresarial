@@ -11,9 +11,9 @@ import {
   HttpCode,
 } from '@nestjs/common';
 import { ParseIntPipe } from 'src/common/parse-int.pipe';
-import { CompanyService } from 'src/services/company/company.service';
-import { CreateCompanyDto } from 'src/dtos/company.dtos';
-import { UpdateCompanyDto } from 'src/dtos/company.dtos';
+import { CompanyService } from 'src/companies/service/company/company.service';
+import { CreateCompanyDto } from 'src/companies/dtos/company.dtos';
+import { UpdateCompanyDto } from 'src/companies/dtos/company.dtos';
 @Controller('Company')
 export class CompanyController {
   constructor(private companysService: CompanyService) {}

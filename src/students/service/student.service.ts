@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Student } from 'src/entities/student.entity';
-import { CreateStudentdDto, UpdateStudentDto } from 'src/dtos/student.dtos';
+import { Student } from 'src/students/entity/student.entity';
+import { CreateStudentdDto, UpdateStudentDto } from 'src/students/dtos/student.dtos';
 
 @Injectable()
 export class StudentService {
@@ -24,7 +24,7 @@ export class StudentService {
   /**Buscar por id */
 
   findOne(id: number) {
-    return this.students.find((item) => item.id);
+    return this.students.find((item) => item.id == id);
   }
   /**Create */
 
@@ -41,15 +41,10 @@ export class StudentService {
   /**UPDATE */
 
   update(id: number, payload: UpdateStudentDto) {
-    /**
-         * const user = await getRepository(Users).findOne(req.params.id); //Busco el usuario en la tabla por el ID recibido
-    getRepository(Users).merge(user, req.body);  // Hace un merge de los datos existentes con los que se reciben a través de body
-    const results = await getRepository(Users).save(user);  // Almacena el cambio en la base de datos
-         */
-    //const product = await getRepository(Users).findOne(req.params.id);
+
     const student = this.findOne(id);
     if (student) {
-      const index = this.students.findIndex((item) => item.id === id);
+      const index = this.students.findIndex((item) => item.id == id);
       this.students[index] = {
         ...student,
         ...payload,

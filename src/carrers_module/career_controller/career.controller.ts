@@ -11,9 +11,9 @@ import {
   HttpCode,
 } from '@nestjs/common';
 import { ParseIntPipe } from 'src/common/parse-int.pipe';
-import { CreateCareerdDto } from 'src/dtos/career.dtos';
-import { UpdateCareerDto } from 'src/dtos/career.dtos';
-import { CareerService } from 'src/services/career/career.service';
+import { CreateCareerdDto } from 'src/carrers_module/dtos/career.dtos';
+import { UpdateCareerDto } from 'src/carrers_module/dtos/career.dtos';
+import { CareerService } from 'src/carrers_module/service/career/career.service';
 
 @Controller('career')
 export class CareerController {
