@@ -1,16 +1,22 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { BusinessTutor } from 'src/entities/businessTutor.entity';
-import { CreateBusinessTutorDto, UpdateBusinessTutorDto } from 'src/dtos/business-tutors.dtos';
+import { BusinessTutor } from 'src/business-tutor/entities/businessTutor.entity';
+import { CreateBusinessTutordDto, UpdateBusinessTutorDto } from 'src/business-tutor/dtos/business-tutor.dtos';
 
 @Injectable()
-export class BusinessTutorsService {
-    private countIdBusinessTutor = 1;
+export class BusinessTutorService {
+    private countIdBusinessTutors = 1;
 
     private businessTutors: BusinessTutor[] = [
         {
             id: 1,
-            tutorName: 'Maritza',
-            addressTutor: 'La Ecuatoriana',
+            identification_card: 55554547,
+            name: 'Juan',
+            surname: 'Perez',
+            address: 'La Ecuatoriana',
+            institutional_mail: 'juanperez@yavirac.edu.ec',
+            personal_mail: 'juanperez@gmail.com',
+            telephone: 498956554,
+
         },
     ];
     /** Buscar todo */
@@ -25,10 +31,10 @@ export class BusinessTutorsService {
     }
     /**Create */
 
-    create(payload: CreateBusinessTutorDto) {
-        this.countIdBusinessTutor = this.countIdBusinessTutor + 1;
+    create(payload: CreateBusinessTutordDto) {
+        this.countIdBusinessTutors = this.countIdBusinessTutors + 1;
         const newBusinessTutor = {
-            id: this.countIdBusinessTutor,
+            id: this.countIdBusinessTutors,
             ...payload,
         };
         this.businessTutors.push(newBusinessTutor);

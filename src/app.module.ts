@@ -7,8 +7,8 @@ import { ProductsController } from './controllers/products.controller';
 import { ProductsService } from './services/products/products.service';
 import { SchoolPeriodService } from './services/school-period/school-period.service';
 import { SchoolPeriodController } from './controllers/school-period/school-period.controller';
-import { BusinessTutorsService } from './services/business-tutors/business-tutors.service';
-import { BusinessTutorsController } from './controllers/business-tutor/business-tutors.controller';
+import { BusinessTutorService } from './business-tutor/services/business-tutor.service';
+import { BusinessTutorController } from './business-tutor/controllers/business-tutor.controller';
 import { DualTrainingService } from './services/dual-training/dual-training.service';
 import { DualTrainingController } from './controllers/dual-training/dual-training.controller';
 import { StudentService } from './services/student/student.service';
@@ -21,14 +21,15 @@ import { InstitutionalTutorController } from './controllers/institutional-tutor/
 import { InstitutionalTutorService } from './services/institutional-tutor/institutional-tutor.service';
 import { CareerService } from './services/career/career.service';
 import { CareerController } from './controllers/career/career.controller';
+import { BusinessTutorModule } from './business-tutor/business-tutor.module';
 @Module({
-  imports: [],
+  imports: [BusinessTutorModule],
   controllers: [
     AppController,
     CategoriesController,
     ProductsController,
     SchoolPeriodController,
-    BusinessTutorsController,
+    BusinessTutorController,
     DualTrainingController,
     StudentController,
     CompanyController,
@@ -40,7 +41,7 @@ import { CareerController } from './controllers/career/career.controller';
     AppService,
     ProductsService,
     SchoolPeriodService,
-    BusinessTutorsService,
+    BusinessTutorService,
     DualTrainingService,
     StudentService,
     LevelService,
