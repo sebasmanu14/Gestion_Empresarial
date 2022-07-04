@@ -6,10 +6,8 @@ import { CategoriesController } from './controllers/categories.controller';
 import { ProductsController } from './controllers/products.controller';
 import { ProductsService } from './services/products/products.service';
 import { SchoolPeriodService } from './school-period/service/school-period.service';
-
 import { BusinessTutorService } from './business-tutor/services/business-tutor.service';
 import { BusinessTutorController } from './business-tutor/controllers/business-tutor.controller';
-
 import { BusinessTutorModule } from './business-tutor/business-tutor.module';
 import { SchoolPeriodController } from './school-period/controllers/school-period.controller';
 import { DualTrainingService } from './dual-training/service/dual-training.service';
@@ -24,8 +22,10 @@ import { InstitutionalTutorController } from './institutional-tutors/controllers
 import { CareerController } from './carrers_module/career_controller/career.controller';
 import { InstitutionalTutorService } from './institutional-tutors/services/institutional-tutor.service';
 import { CareerService } from './carrers_module/service/career/career.service';
+import { StudentsModule } from './students/students.module';
+
 @Module({
-  imports: [BusinessTutorModule],
+  imports: [BusinessTutorModule, StudentsModule],
   controllers: [
     AppController,
     CategoriesController,
