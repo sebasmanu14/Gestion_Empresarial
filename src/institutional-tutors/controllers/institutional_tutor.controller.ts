@@ -12,8 +12,8 @@ import {
     HttpCode,
    } from '@nestjs/common';
   import { ParseIntPipe } from 'src/common/parse-int.pipe';
-  import { CreateInstitutionalTutorDto, UpdateInstitutionalTutorDto } from 'src/dtos/institutional-tutor.dtos';
-  import { InstitutionalTutorService } from 'src/services/institutional-tutor/institutional-tutor.service';
+  import { CreateInstitutionalTutorDto, UpdateInstitutionalTutorDto } from 'src/institutional-tutors/dtos/institutional-tutor.dtos';
+  import { InstitutionalTutorService } from 'src/institutional-tutors/services/institutional-tutor.service';
 
 @Controller('institutionalTutors')
 export class InstitutionalTutorController {

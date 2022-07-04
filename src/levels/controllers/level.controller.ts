@@ -11,9 +11,9 @@ import {
   HttpCode,
  } from '@nestjs/common';
 import { ParseIntPipe } from 'src/common/parse-int.pipe';
-import { CreateLevelDto } from 'src/dtos/level.dtos';
-import { UpdateLevelDto } from 'src/dtos/level.dtos';
-import { LevelService } from 'src/services/level/level.service';
+import { CreateLevelDto } from 'src/levels/dtos/level.dtos';
+import { UpdateLevelDto } from 'src/levels/dtos/level.dtos';
+import { LevelService } from 'src/levels/services/level.service';
 
 @Controller('level')
 export class LevelController {

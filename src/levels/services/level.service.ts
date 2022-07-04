@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Level } from 'src/entities/level.entity';
+import { Level } from 'src/levels/entities/level.entity';
 import { CreateLevelDto, UpdateLevelDto }
-from 'src/dtos/level.dtos';
+from 'src/levels/dtos/level.dtos';
 
 @Injectable()
 export class LevelService {

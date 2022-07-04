@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { InstitutionalTutor } from 'src/entities/institutionalTutor.entity';
+import { InstitutionalTutor } from 'src/institutional-tutors/entities/institutionalTutor.entity';
 import { CreateInstitutionalTutorDto, UpdateInstitutionalTutorDto }
-from 'src/dtos/institutional-tutor.dtos';
+from 'src/institutional-tutors/dtos/institutional-tutor.dtos';
 
 @Injectable()
 export class InstitutionalTutorService {
@@ -11,8 +11,14 @@ export class InstitutionalTutorService {
     private institutionalTutors: InstitutionalTutor[] = [
       {
         id: 1,
+        identityCard:1754985426,
         name: 'Luis',
+        lastName:'Olmedo',
+        institutionalEmail:'wh@yavirac.edu.ec',
+        personalEmail:'wop@gmail.com',
         address:'Guamani',
+        phone:'09890911452',
+        studentNumbers:4,
       },
     ];
 
@@ -24,7 +30,7 @@ export class InstitutionalTutorService {
     /**Buscar por id */
 
     findOne(id: number) {
-      return this.institutionalTutors.find((item) => item.id);
+      return this.institutionalTutors.find((item) => item.id == id);
     }
     /**Create */
 
@@ -49,7 +55,7 @@ export class InstitutionalTutorService {
       //const product = await getRepository(Users).findOne(req.params.id);
       const institutionalTutor = this.findOne(id);
       if (institutionalTutor) {
-        const index = this.institutionalTutors.findIndex((item) => item.id === id);
+        const index = this.institutionalTutors.findIndex((item) => item.id == id);
         this.institutionalTutors[index] = {
           ...institutionalTutor,
           ...payload,

@@ -5,24 +5,26 @@ import { AppService } from './app.service';
 import { CategoriesController } from './controllers/categories.controller';
 import { ProductsController } from './controllers/products.controller';
 import { ProductsService } from './services/products/products.service';
-import { SchoolPeriodService } from './services/school-period/school-period.service';
 import { SchoolPeriodController } from './controllers/school-period/school-period.controller';
+import { SchoolPeriodService } from './services/school-period/school-period.service';
 import { BusinessTutorsService } from './services/business-tutors/business-tutors.service';
 import { BusinessTutorsController } from './controllers/business-tutor/business-tutors.controller';
-import { DualTrainingService } from './services/dual-training/dual-training.service';
 import { DualTrainingController } from './controllers/dual-training/dual-training.controller';
-import { StudentService } from './services/student/student.service';
+import { DualTrainingService } from './services/dual-training/dual-training.service';
 import { StudentController } from './controllers/student/student.controller';
-import { CompanyService } from './services/company/company.service';
+import { StudentService } from './services/student/student.service';
 import { CompanyController } from './controllers/company/company.controller';
-import { LevelController } from './controllers/level/level.controller';
-import { LevelService } from './services/level/level.service';
-import { InstitutionalTutorController } from './controllers/institutional-tutor/institutional_tutor.controller';
-import { InstitutionalTutorService } from './services/institutional-tutor/institutional-tutor.service';
-import { CareerService } from './services/career/career.service';
+import { CompanyService } from './services/company/company.service';
+import { LevelController } from './levels/controllers/level.controller';
+import { LevelService } from './levels/services/level.service';
+import { InstitutionalTutorController } from './institutional-tutors/controllers/institutional_tutor.controller';
+import { InstitutionalTutorService } from './institutional-tutors/services/institutional-tutor.service';
 import { CareerController } from './controllers/career/career.controller';
+import { CareerService } from './services/career/career.service';
+import { LevelModule } from './levels/levels.module';
+import { InstitutionalTutorModule } from './institutional-tutors/institutional-tutors.module';
 @Module({
-  imports: [],
+  imports: [InstitutionalTutorModule, LevelModule],
   controllers: [
     AppController,
     CategoriesController,
