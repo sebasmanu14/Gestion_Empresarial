@@ -11,25 +11,25 @@ import {
   HttpCode,
 } from '@nestjs/common';
 import { ParseIntPipe } from 'src/common/parse-int.pipe';
-import { CreateDualTrainingDto } from 'src/dtos/dualTrainings.dtos';
-import { UpdateDualTrainingDto } from 'src/dtos/dualTrainings.dtos';
-import { DualTrainingService } from 'src/services/dual-training/dual-training.service';
+import { CreateSchoolPeriodDto } from 'src/school-period/dtos/school-periods.dtos';
+import { UpdateSchoolPeriodDto } from 'src/school-period/dtos/school-periods.dtos';
+import { SchoolPeriodService } from '../service/school-period.service';
 
-@Controller('dualTraining')
-export class DualTrainingController {
-  constructor(private dualTrainingService: DualTrainingService) {}
+@Controller('schoolPeriods')
+export class SchoolPeriodController {
+  constructor(private schoolPeriodService: SchoolPeriodService) {}
 
-  @Get('filter') //@Get('dualTraining/filter')
-  getDualTrainingFilter() {
+  @Get('filter') //@Get('schoolPeriod/filter')
+  getSchoolPeriodFilter() {
     return `Hola Word `;
   }
 
-  @Get(':dualTrainingId') //@Get('dualTraining/:dualTrainingId')
-  getDualTraining(
-    @Param(`dualTrainingId`, ParseIntPipe) dualTrainingId: number,
+  @Get(':schoolPeriodId') //@Get('schoolPeriod/:schoolPeriodId')
+  getSchoolPeriod(
+    @Param(`schoolPeriodId`, ParseIntPipe) schoolPeriodId: number,
   ) {
     // return `product ${schoolPeriodId}`;
-    return this.dualTrainingService.findOne(dualTrainingId);
+    return this.schoolPeriodService.findOne(schoolPeriodId);
   }
 
   @Get('') //    @Get('products')
@@ -46,30 +46,30 @@ export class DualTrainingController {
     //     message: `products limit=>${limit} offset=${offset} brand=>${brand}`
     // }
 
-    return this.dualTrainingService.findAll();
+    return this.schoolPeriodService.findAll();
   }
 
   @Post()
-  create(@Body() payload: CreateDualTrainingDto) {
+  create(@Body() payload: CreateSchoolPeriodDto) {
     // return {
     //     message:'accion de crear',
     //     payload,
     // }
-    return this.dualTrainingService.create(payload);
+    return this.schoolPeriodService.create(payload);
   }
 
   @Put(':id')
-  update(@Param('id') id: number, @Body() payload: UpdateDualTrainingDto) {
+  update(@Param('id') id: number, @Body() payload: UpdateSchoolPeriodDto) {
     // return {
     //     id,
     //     payload,
     // }
-    return this.dualTrainingService.update(id, payload);
+    return this.schoolPeriodService.update(id, payload);
   }
 
   @Delete(':id')
   delete(@Param('id') id: number) {
     // return id;
-    return this.dualTrainingService.delete(+id);
+    return this.schoolPeriodService.delete(+id);
   }
 }

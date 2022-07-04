@@ -1,10 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { DualTraining } from 'src/entities/dualTraining.entity';
+import { DualTraining } from 'src/dual-training/entity/dualTraining.entity';
 
 import {
   CreateDualTrainingDto,
   UpdateDualTrainingDto,
-} from 'src/dtos/dualTrainings.dtos';
+} from 'src/dual-training/dtos/dualTrainings.dtos';
 
 @Injectable()
 export class DualTrainingService {

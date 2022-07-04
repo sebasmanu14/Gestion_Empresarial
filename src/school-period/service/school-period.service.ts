@@ -1,9 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { SchoolPeriod } from 'src/entities/schoolPeriod.entity';
+import { SchoolPeriod } from '../entity/schoolPeriod.entity';
 import {
   CreateSchoolPeriodDto,
   UpdateSchoolPeriodDto,
-} from 'src/dtos/school-periods.dtos';
+} from 'src/school-period/dtos/school-periods.dtos';
 
 @Injectable()
 export class SchoolPeriodService {

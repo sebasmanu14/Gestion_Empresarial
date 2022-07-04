@@ -1,4 +1,5 @@
-import { 
+/* eslint-disable prettier/prettier */
+import {
   Controller,
   Param,
   Query,
@@ -9,7 +10,7 @@ import {
   Delete,
   HttpStatus,
   HttpCode,
- } from '@nestjs/common';
+} from '@nestjs/common';
 import { ParseIntPipe } from 'src/common/parse-int.pipe';
 import { CreateLevelDto } from 'src/dtos/level.dtos';
 import { UpdateLevelDto } from 'src/dtos/level.dtos';
@@ -17,7 +18,7 @@ import { LevelService } from 'src/services/level/level.service';
 
 @Controller('level')
 export class LevelController {
-    constructor(private levelService: LevelService) {}
+  constructor(private levelService: LevelService) {}
 
   @Get('filter') //@Get('level/filter')
   getLevelFilter() {
@@ -25,9 +26,7 @@ export class LevelController {
   }
 
   @Get(':levelId') //@Get('level/:levelId')
-  getLevel(
-    @Param(`levelId`, ParseIntPipe) levelId: number,
-  ) {
+  getLevel(@Param(`levelId`, ParseIntPipe) levelId: number) {
     // return `product ${levelId}`;
     return this.levelService.findOne(levelId);
   }
