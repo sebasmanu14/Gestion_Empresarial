@@ -8,6 +8,7 @@ export class CreateCompanyDto {
   readonly phone:string;
   readonly company_address:string;
   readonly company_description:string;
+  readonly ruc:string;
 }
 
 export class UpdateCompanyDto extends PartialType(CreateCompanyDto) {}

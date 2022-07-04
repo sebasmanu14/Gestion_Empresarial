@@ -11,4 +11,6 @@ export class Company {
   company_address: string;
   @Column()
   company_description: string;
+  @Column()
+  ruc: string;
 }
